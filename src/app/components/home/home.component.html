@@ -1,0 +1,305 @@
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#111827; line-height:1.6;">
+  <!-- Header (100px, brand + nav only, no buttons) -->
+  <header class="topbar" style="height:100px; background:#1E3A8A; color:#F8FAFC; display:flex; align-items:center; justify-content:space-between; padding:0 24px; position:sticky; top:0; z-index:1000;">
+    <div style="display:flex; align-items:center; gap:24px; white-space:nowrap;">
+      <div style="font-weight:800; letter-spacing:1.2px; font-size:20px; font-family: 'Segoe UI', Roboto, Arial, sans-serif;">RESUMEFORGE</div>
+      <nav class="desktop-nav" style="display:flex; gap:20px; align-items:center; white-space:nowrap;">
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="text-decoration:none; color:#E5E7EB; font-weight:600;">Features</a>
+        <a href="#templates" (click)="$event.preventDefault(); scrollTo('templates')" style="text-decoration:none; color:#E5E7EB; font-weight:600;">Templates</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="text-decoration:none; color:#E5E7EB; font-weight:600;">Plans</a>
+        <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="text-decoration:none; color:#E5E7EB; font-weight:600;">Success Stories</a>
+        <a href="#faqs" (click)="$event.preventDefault(); scrollTo('faqs')" style="text-decoration:none; color:#E5E7EB; font-weight:600;">FAQ</a>
+      </nav>
+    </div>
+    <div class="burger" tabindex="0" role="button" aria-label="Toggle navigation" (click)="isMenuOpen = !isMenuOpen" style="width:28px; height:22px; display:none; flex-direction:column; justify-content:space-between; cursor:pointer;">
+      <span style="display:block; height:3px; background:#F8FAFC; border-radius:2px;"></span>
+      <span style="display:block; height:3px; background:#F8FAFC; border-radius:2px;"></span>
+      <span style="display:block; height:3px; background:#F8FAFC; border-radius:2px;"></span>
+    </div>
+  </header>
+
+  <!-- Mobile menu (separate card below header) -->
+  <div *ngIf="isMenuOpen" class="mobile-menu" style="padding:12px; display:none;">
+    <mat-card style="padding:12px; background:#ffffff; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.12);">
+      <a href="#features" (click)="$event.preventDefault(); scrollTo('features'); isMenuOpen=false" style="display:block; padding:10px 6px; color:#111827; text-decoration:none; font-weight:600;">Features</a>
+      <a href="#templates" (click)="$event.preventDefault(); scrollTo('templates'); isMenuOpen=false" style="display:block; padding:10px 6px; color:#111827; text-decoration:none; font-weight:600;">Templates</a>
+      <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans'); isMenuOpen=false" style="display:block; padding:10px 6px; color:#111827; text-decoration:none; font-weight:600;">Plans</a>
+      <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials'); isMenuOpen=false" style="display:block; padding:10px 6px; color:#111827; text-decoration:none; font-weight:600;">Success Stories</a>
+      <a href="#faqs" (click)="$event.preventDefault(); scrollTo('faqs'); isMenuOpen=false" style="display:block; padding:10px 6px; color:#111827; text-decoration:none; font-weight:600;">FAQ</a>
+    </mat-card>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#F1F5F9,#ffffff); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 420px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#111827;">Build a job‑winning resume in 10 minutes</h1>
+          <p style="margin:0 0 20px 0; font-size:16px; color:#374151;">ATS-ready templates, smart suggestions, and instant export—so you can apply with confidence today.</p>
+          <ul style="margin:0 0 20px 18px; color:#374151;">
+            <li>Start free—no credit card required</li>
+            <li>25+ recruiter‑approved templates</li>
+            <li>Export as PDF and DOCX</li>
+            <li>Optimized for applicant tracking systems (ATS)</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; padding:0 20px; height:44px; border-radius:8px; font-weight:700;">Start Building Free</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#CBD5E1; color:#111827;">Browse Templates</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#64748b;">No account needed to try the editor. Save online to keep edits synced.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">A resume builder designed with recruiters</h2>
+      <p style="margin:0 0 18px 0; color:#374151;">Guided prompts, strong phrasing, and clean layouts that spotlight impact over fluff.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:stretch;">
+        <mat-card class="feature-card" style="flex:1 1 260px; min-width:260px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <ul style="margin:0; padding-left:18px; color:#374151;">
+            <li>Role‑specific examples and power verbs</li>
+            <li>Live section scoring to improve clarity and results</li>
+            <li>Auto formatting that stays ATS compatible</li>
+            <li>Built‑in cover letter and LinkedIn helpers</li>
+          </ul>
+        </mat-card>
+        <div style="flex:2 1 420px; min-width:300px; display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">See How It Works</button>
+            <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">View Features</button>
+          </div>
+          <p style="margin:0; font-size:12px; color:#64748b;">Created for students, career switchers, and seasoned professionals alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:48px 16px; background:#F8FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Get seen, get read, get interviews</h2>
+      <p style="margin:0 0 18px 0; color:#374151;">Stand out with content that hiring managers recognize and applicant tracking systems parse correctly.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">ATS‑friendly structure avoids parsing mistakes</mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">Impact‑first bullet guidance highlights achievements</mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">Modern, professional templates recruiters prefer</mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">Built‑in proofreading to catch tone, tense, and typos</mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">Try It Free</button>
+        <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">See Templates</button>
+      </div>
+      <p style="margin:8px 0 0 0; font-size:12px; color:#64748b;">Users report saving hours and getting more callbacks after one session.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Everything you need to craft a standout resume</h2>
+      <p style="margin:0 0 24px 0; color:#374151;">From phrasing support to perfect formatting—no design skills required.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Smart Suggestions</div>
+          <div style="color:#374151;">Turn responsibilities into impact with data‑driven phrasing and action verbs.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Live Scoring</div>
+          <div style="color:#374151;">Improve clarity and keywords with on‑screen feedback as you type.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">ATS‑Friendly Layouts</div>
+          <div style="color:#374151;">Clean structure and hierarchy that parse correctly across ATS systems.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Instant Exports</div>
+          <div style="color:#374151;">Pixel‑perfect PDF and editable DOCX downloads in one click.</div>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">Open the Editor</button>
+        <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">Compare Plans</button>
+      </div>
+      <p style="margin:8px 0 0 0; font-size:12px; color:#64748b;">Your content autosaves and is securely stored for easy updates.</p>
+    </div>
+  </section>
+
+  <!-- Templates -->
+  <section id="templates" style="padding:48px 16px; background:#F8FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Templates that fit your story—and pass ATS</h2>
+      <p style="margin:0 0 24px 0; color:#374151;">Pick a style, switch colors and spacing, and keep your content consistent across versions.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Modern</div>
+          <div style="color:#374151;">Crisp typography and clear sections for tech, product, and ops roles.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Professional</div>
+          <div style="color:#374151;">Straightforward format favored by finance, consulting, and admin hiring teams.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Creative</div>
+          <div style="color:#374151;">Subtle accents and flexible sections for marketing, design, and content roles.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:18px; border:1px solid #e2e8f0;">
+          <div style="font-weight:700; color:#111827; margin-bottom:6px;">Minimal</div>
+          <div style="color:#374151;">Ultra‑clean layout that focuses attention on achievements and skills.</div>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">Browse All Templates</button>
+        <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">Start With Modern</button>
+      </div>
+      <p style="margin:8px 0 0 0; font-size:12px; color:#64748b;">All templates use consistent headings, margins, and font sizes for clean parsing.</p>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Start free. Upgrade when you're ready.</h2>
+      <p style="margin:0 0 24px 0; color:#374151;">Simple plans for every stage of your search—cancel anytime.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <div style="font-weight:700; color:#111827;">Free</div>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#111827;">$0</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#374151;">
+            <li>Access to core editor</li>
+            <li>3 templates</li>
+            <li>Basic PDF export</li>
+            <li>Limited smart suggestions</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#111827; height:42px;">Start Free</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #1E3A8A; border-radius:16px; padding:22px; background:#1E3A8A; color:#F8FAFC; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <div style="font-weight:700; color:#F8FAFC;">Pro</div>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#F8FAFC;">$7/month</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#E5E7EB;">
+            <li>All templates + custom colors</li>
+            <li>Unlimited PDF & DOCX exports</li>
+            <li>Full smart suggestions & live scoring</li>
+            <li>Cover letter builder</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#F59E0B; color:#0b1a0f; font-weight:800;">Upgrade to Pro</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e2e8f0; border-radius:14px; padding:20px; background:#ffffff;">
+          <div style="font-weight:700; color:#111827;">Career Pro+</div>
+          <div style="margin:6px 0 14px 0; font-size:28px; color:#111827;">$15/month</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#374151;">
+            <li>Everything in Pro</li>
+            <li>LinkedIn profile optimizer</li>
+            <li>Priority chat support</li>
+            <li>Multiple resume versions & tracking</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; border-color:#cbd5e1; color:#111827; height:42px;">Go Career Pro+</button>
+        </mat-card>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#64748b;">Prices shown in USD. Taxes may apply. Cancel anytime from your account settings.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" style="padding:48px 16px; background:#F8FAFC;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Loved by job seekers across industries</h2>
+      <p style="margin:0 0 24px 0; color:#374151;">Real results from students, career switchers, and senior professionals.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Priya K. — Product Manager</p>
+          <p style="margin:0; color:#374151;">“ResumeForge helped me turn vague tasks into measurable wins. I got three interviews within two weeks.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Daniel M. — New Grad, Computer Science</p>
+          <p style="margin:0; color:#374151;">“The templates looked professional and passed every ATS I tried. Exporting to PDF and DOCX was seamless.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e2e8f0; border-radius:12px; padding:18px;">
+          <p style="margin:0 0 6px 0; color:#111827; font-weight:700;">Aisha R. — Marketing Specialist</p>
+          <p style="margin:0; color:#374151;">“Live scoring nudged me to tighten phrasing and add keywords. I felt confident hitting apply.”</p>
+        </mat-card>
+      </div>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">See More Stories</button>
+        <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">Try It Now</button>
+      </div>
+      <p style="margin:8px 0 0 0; font-size:12px; color:#64748b;">Testimonials reflect individual experiences; results may vary.</p>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#111827;">Questions, answered</h2>
+      <p style="margin:0 0 18px 0; color:#374151;">Quick details so you can start building with confidence.</p>
+      <mat-accordion multi="true">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span style="font-weight:600; color:#111827;">Is the Free plan really free?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#374151;">Yes—use the core editor and export basic PDFs at no cost.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span style="font-weight:600; color:#111827;">Will my resume pass ATS?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#374151;">Our layouts follow clean headings and structure that major ATS parse correctly.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span style="font-weight:600; color:#111827;">Can I cancel anytime?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#374151;">Yes—manage or cancel your subscription from your account settings in seconds.</p>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <span style="font-weight:600; color:#111827;">Do you support DOCX exports?</span>
+          </mat-expansion-panel-header>
+          <p style="margin:0; color:#374151;">Yes—both DOCX and PDF are available on Pro and Career Pro+.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div style="margin-top:16px; display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1E3A8A; color:#F8FAFC; height:42px; border-radius:8px; font-weight:700;">Start Free</button>
+        <button mat-stroked-button style="height:42px; border-radius:8px; border-color:#CBD5E1; color:#111827;">Compare Plans</button>
+      </div>
+      <p style="margin:8px 0 0 0; font-size:12px; color:#64748b;">Need more details? Check our Help Center from within the editor.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#111827; color:#E5E7EB;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:800; margin-bottom:6px; letter-spacing:1px;">RESUMEFORGE</div>
+        <div style="font-size:13px; color:#9CA3AF;">ResumeForge helps you craft ATS‑friendly, recruiter‑approved resumes that land interviews—fast.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Product</div>
+          <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Features</a>
+          <a href="#templates" (click)="$event.preventDefault(); scrollTo('templates')" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Templates</a>
+          <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Plans</a>
+          <a href="#faqs" (click)="$event.preventDefault(); scrollTo('faqs')" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">FAQ</a>
+          <a href="#testimonials" (click)="$event.preventDefault(); scrollTo('testimonials')" style="display:block; text-decoration:none; color:#D1D5DB;">Success Stories</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">About</a>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Blog</a>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Careers</a>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB;">Contact</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#F3F4F6;">Legal</div>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Privacy Policy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB; margin-bottom:6px;">Terms of Service</a>
+          <a href="#" style="display:block; text-decoration:none; color:#D1D5DB;">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#1f2937;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#9CA3AF;">© 2025 resume-forge. All rights reserved.</div>
+  </footer>
+</div>
